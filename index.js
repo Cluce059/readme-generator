@@ -1,10 +1,15 @@
 // Description, Table of Contents, 
 //Installation, Usage, License, Contributing, Tests, and Questions
-//const inquirer = require('inquirer');
-// var commandLineArgs = process.argv;
-// console.log(commandLineArgs);
-console.log("hi");
-const questions = () =>{
+const inquirer = require('inquirer');
+const fs = require('fs');
+const generatePage = require('./utils/generateMarkdown');
+
+
+//TO DO init an arr of questions
+const questions = data =>{
+    if(!data){
+        data = [];
+    }
     return inquirer.prompt([
       {
         type: 'input',
@@ -85,7 +90,7 @@ const questions = () =>{
         type: 'checkbox',
         name: 'license',
         message: 'Which type of license do you want to include?',
-        choices: ['community', 'MIT', 'GPLv3']
+        choices: ['Apache', 'ISC', 'GNU', 'MIT', 'open']
     },
     {
         type: 'input',
@@ -119,30 +124,39 @@ const questions = () =>{
     ]);
 };
 
-//questions();
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-// };
-// const writeFile = fileContent => {
-//     return new Promise((resolve, reject) => {
-//         fs.writeFile('./dist/README.md', fileContent, err =>{       
-//         //if error, reject primise and go to catch()
-//         if(err){
-//             reject(err);
-//             return;
-//         }
-//         //if promise, send to .then()
-//         resolve({
-//             ok: true,
-//             message: 'File Created!'
-//         });
-//     });
-// });
-// };
+ function writeToFile(fileName, data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/index.html', fileContent, err =>{       
+        //if error, reject primise and go to catch()
+        if(err){
+            reject(err);
+            return;
+        }
+        //if promise, send to .then()
+        resolve({
+            ok: true,
+            message: 'File Created!'
+        });
+    });
+});
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+const init =()=>{
+    questions()
+    .then(data =>{
+        return generatePage(data);
+        console.log(data);
+    })
+    //.then(pageMarkdown =>{
+        //return writeToFile(pageMarkdown);
+    //})
+    .catch(err => {
+        console.log(err);
+    });
+};
 
 // Function call to initialize app
 init();
