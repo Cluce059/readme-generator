@@ -11,46 +11,46 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
+module.exports = data => {
+  console.log(data);
+  //const READMEDataArr = data.map(({title, license, description, installation, usage, contributing, tests, questions, username, email}) => {
+    if (!data) {
+      return '';
+    }
+    return `
+    # ${data.title}
+    ![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)<br />
+    ## Description
+    🔍 ${data.description}
+    ## Table of Contents
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+    ## Installation
+    💾 ${data.installation}
+    ## Usage
+    💻 ${data.usageInfo}
+    ## License
+    ![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)
+    <br />
+    This application is covered by the ${data.license} license. 
+    ## Contributing
+    👪 ${data.contribution}
+    ## Tests
+    ✏️ ${data.testInstructions}
+    ## Questions
+    ✋ ${data.reachout}<br />
+    <br />
+    :octocat: Find me on GitHub: [${data.github}](https://github.com/${data.github})<br />
+    <br />
+    ✉️ Email: ${data.email}<br /><br />
+    _This README was generated with ❤️ by [README-generator](https://github.com/Cluce059/readme-generator) 🔥🔥🔥_
+  
+   `; 
 
-function generateMarkdown(name, github, email) {
-  return `
-  # ${github}
-  ## Description
-  🔍 ${name}
-  ## Table of Contents
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-  ## Installation
-  💾 ${github}
-  ## Usage
-  💻 ${name}
-  ## License
-  <br />
-  This application is covered by the ${name} license. 
-  ## Contributing
-  👪 ${github}
-  ## Tests
-  ✏️ ${github}
-  ## Questions
-  ✋ ${name}<br />
-  <br />
-  :octocat: Find me on GitHub: [${name}](https://github.com/${name})<br />
-  <br />
-  ✉️ Email me with any questions: ${email}<br /><br />
-  _This README was generated with ❤️ by [README-generator](https://github.com/Cluce059/readme-generator) 🔥🔥🔥_
-
- `;
  }; 
-
-
-
-
-
-
-
-module.exports = generateMarkdown;
+//module.exports = generateMarkdown;

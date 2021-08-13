@@ -2,14 +2,11 @@
 //Installation, Usage, License, Contributing, Tests, and Questions
 const inquirer = require('inquirer');
 const fs = require('fs');
-//const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 
 //TO DO init an arr of questions
-const questions = data =>{
-    if(!data){
-        data = [];
-    }
+const questions = () =>{
     return inquirer.prompt([
       {
         type: 'input',
@@ -110,7 +107,7 @@ const questions = data =>{
     {
         type: 'input',
         name: 'email',
-        message: 'And finally, what is your email address?',
+        message: 'What is your email address?',
         validate: emailInpnut =>{
             if(emailInpnut){
                 return true;
@@ -120,23 +117,26 @@ const questions = data =>{
                 return false;
             }
         }
+    },
+    {
+        type: 'input',
+        name: 'reachout',
+        message: 'And finally, how can users reach out to ask questions?'
     }
-    ])
-    .then(answers =>{
-        console.log(answers);
-    })
+    ]);
 };
-questions();
+
 const testData = {
     title: 'Run Buddy',
     description: 'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque. Nulla eget fringilla nulla. Integer gravida magna mi, id efficitur metus tempus et.',
     installation: 'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque. Nulla eget fringilla nulla. Integer gravida magna mi, id efficitur metus tempus et.',
     usageInfo:'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque. Nulla eget fringilla nulla. Integer gravida magna mi, id efficitur metus tempus et. Nam fringilla elit dapibus pellentesque cursus.',
     contribution: 'PRs Welcome',
-    testIntructions:           'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque. Nulla eget fringilla nulla. Integer gravida magna mi, id efficitur metus tempus et. Nam fringilla elit dapibus pellentesque cursus.',
+    testIntructions:'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque. Nulla eget fringilla nulla. Integer gravida magna mi, id efficitur metus tempus et. Nam fringilla elit dapibus pellentesque cursus.',
     license: ['Apache'],
     github: 'Cluce059',
-    email: 'cluce059@gmail.com'
+    email: 'cluce059@gmail.com',
+    reachout: 'Send me an email, please!'
 };
 
 //testing/////////////////////////////
@@ -156,7 +156,7 @@ const testData = {
 // TODO: Create a function to write README file
  function writeToFile(fileName, data) {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./dist/index.html', fileContent, err =>{       
+        fs.writeFile(fileName, data, err =>{       
         //if error, reject primise and go to catch()
         if(err){
             reject(err);
@@ -171,20 +171,22 @@ const testData = {
 });
 };
 
+
+//const pageMarkdown = generateMarkdown(testData);
 // TODO: Create a function to initialize app
 const init =()=>{
     questions()
-    .then(data =>{
-        //return generatePage(data);
-        console.log(data);
+    .then(answers =>{
+        pageMarkdown = generateMarkdown(testData);
+        console.log(pageMarkdown);
     })
-    //.then(pageMarkdown =>{
-        //return writeToFile(pageMarkdown);
-    //})
+    // .then(pageMarkdown =>{
+    //     return writeToFile('./dist/README.md', pageMarkdown);
+    // })
     .catch(err => {
         console.log(err);
     });
 };
 
 // Function call to initialize app
-//init();
+init();
