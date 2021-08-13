@@ -17,11 +17,11 @@ module.exports = data => {
       return '';
     }
     return `
-    # ${data.title}
-    ![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)<br />
-    ## Description
-    🔍 ${data.description}
-    ## Table of Contents
+  ## ${data.title}
+  ![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)<br />
+  ## Description
+  🔍 ${data.description}
+  ## Table of Contents
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
