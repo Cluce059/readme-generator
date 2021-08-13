@@ -13,7 +13,6 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 module.exports = data => {
   console.log(data);
-  //const READMEDataArr = data.map(({title, license, description, installation, usage, contributing, tests, questions, username, email}) => {
     if (!data) {
       return '';
     }
@@ -41,7 +40,7 @@ module.exports = data => {
     ## Contributing
     👪 ${data.contribution}
     ## Tests
-    ✏️ ${data.testInstructions}
+    ✏️ ${data.testIntructions}
     ## Questions
     ✋ ${data.reachout}<br />
     <br />

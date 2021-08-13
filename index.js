@@ -177,12 +177,12 @@ const testData = {
 const init =()=>{
     questions()
     .then(answers =>{
-        pageMarkdown = generateMarkdown(testData);
-        console.log(pageMarkdown);
+        pageMarkdown = generateMarkdown(answers);
+        //console.log(answers);
+        console.log(typeof(pageMarkdown));
+        console.log(typeof(answers));
+        return writeToFile('./dist/README.md', pageMarkdown);
     })
-    // .then(pageMarkdown =>{
-    //     return writeToFile('./dist/README.md', pageMarkdown);
-    // })
     .catch(err => {
         console.log(err);
     });
