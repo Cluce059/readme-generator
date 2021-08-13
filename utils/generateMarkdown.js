@@ -12,15 +12,11 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 
-function generateMarkdown(data) {
-  if (!data) {
-    return '';
-  }
+function generateMarkdown(name, github, email) {
   return `
-  # ${data.title}
-  ![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)<br />
+  # ${github}
   ## Description
-  🔍 ${data.description}
+  🔍 ${name}
   ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
@@ -30,26 +26,31 @@ function generateMarkdown(data) {
 - [Tests](#tests)
 - [Questions](#questions)
   ## Installation
-  💾 ${data.installation}
+  💾 ${github}
   ## Usage
-  💻 ${data.usage}
+  💻 ${name}
   ## License
-  ![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)
   <br />
-  This application is covered by the ${data.license} license. 
+  This application is covered by the ${name} license. 
   ## Contributing
-  👪 ${data.contributing}
+  👪 ${github}
   ## Tests
-  ✏️ ${data.tests}
+  ✏️ ${github}
   ## Questions
-  ✋ ${data.questions}<br />
+  ✋ ${name}<br />
   <br />
-  :octocat: Find me on GitHub: [${data.username}](https://github.com/${data.username})<br />
+  :octocat: Find me on GitHub: [${name}](https://github.com/${name})<br />
   <br />
-  ✉️ Email me with any questions: ${data.email}<br /><br />
+  ✉️ Email me with any questions: ${email}<br /><br />
   _This README was generated with ❤️ by [README-generator](https://github.com/Cluce059/readme-generator) 🔥🔥🔥_
 
  `;
  }; 
+
+
+
+
+
+
 
 module.exports = generateMarkdown;

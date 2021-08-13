@@ -2,7 +2,7 @@
 //Installation, Usage, License, Contributing, Tests, and Questions
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generatePage = require('./utils/generateMarkdown');
+//const generateMarkdown = require('./utils/generateMarkdown.js');
 
 
 //TO DO init an arr of questions
@@ -121,8 +121,36 @@ const questions = data =>{
             }
         }
     }
-    ]);
+    ])
+    .then(answers =>{
+        console.log(answers);
+    })
 };
+questions();
+const testData = {
+    title: 'Run Buddy',
+    description: 'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque. Nulla eget fringilla nulla. Integer gravida magna mi, id efficitur metus tempus et.',
+    installation: 'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque. Nulla eget fringilla nulla. Integer gravida magna mi, id efficitur metus tempus et.',
+    usageInfo:'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque. Nulla eget fringilla nulla. Integer gravida magna mi, id efficitur metus tempus et. Nam fringilla elit dapibus pellentesque cursus.',
+    contribution: 'PRs Welcome',
+    testIntructions:           'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque. Nulla eget fringilla nulla. Integer gravida magna mi, id efficitur metus tempus et. Nam fringilla elit dapibus pellentesque cursus.',
+    license: ['Apache'],
+    github: 'Cluce059',
+    email: 'cluce059@gmail.com'
+};
+
+//testing/////////////////////////////
+//const profileDataArgs = process.argv.slice(3);
+
+//const [name, github, email] = profileDataArgs;
+
+
+//    fs.writeFile('./README.md', generateMarkdown(name, github, email), err => {
+//     if (err) throw new Error(err);
+  
+//     console.log('Readme complete! Check out Readme.md to see the output!');
+//   });
+
 
 
 // TODO: Create a function to write README file
@@ -147,7 +175,7 @@ const questions = data =>{
 const init =()=>{
     questions()
     .then(data =>{
-        return generatePage(data);
+        //return generatePage(data);
         console.log(data);
     })
     //.then(pageMarkdown =>{
@@ -159,4 +187,4 @@ const init =()=>{
 };
 
 // Function call to initialize app
-init();
+//init();
