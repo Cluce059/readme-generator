@@ -1,9 +1,9 @@
 
-  ## f
-  ![badge](https://img.shields.io/badge/license-GNU-blueviolet)
+  ## Readme-Generator
+  ![badge](https://img.shields.io/badge/license-MIT-blueviolet)
   <br />
   ## Description
-  🔍 f
+  🔍 generates a professional readme based on user input
   ## Table of Contents
   - [Description](#description)
   - [Installation](#installation)
@@ -13,23 +13,23 @@
   - [Tests](#tests)
   - [Questions](#questions)
   ## Installation
-  💾 f
+  💾 clone this repo and install node npm
   ## Usage
-  💻 f
+  💻 for generating readmes
   ## License
   
-  ![badge](https://img.shields.io/badge/license-GNU-blueviolet)
-  This project was made with a/an GNU license.
+  ![badge](https://img.shields.io/badge/license-MIT-blueviolet)
+  This project was made with a/an MIT license.
   
   ## Contributing
-  😇 f
+  😇 PR's welcome!
   ## Tests
-  ❗  f
+  ❗  user the test data index.js
   ## Questions
-  👽 f<br />
+  👽 email me!<br />
   <br />
-  :octocat: Find me on GitHub: [f](https://github.com/f)<br />
+  :octocat: Find me on GitHub: [Cluce059](https://github.com/Cluce059)<br />
   <br />
-  💬 Email: f<br /><br />
+  💬 Email: Cluce059@gmail.com<br /><br />
   _This README was generated with ❤️ by [README-generator](https://github.com/Cluce059/readme-generator) 	👀👀👀_
   
