@@ -28,7 +28,7 @@
   ## Questions
   👽 email me!<br />
   ## Tutorial
-  ![TutorialGif](src\tutorial.gif);
+  ![TutorialGif](https://github.com/Cluce059/readme-generator/blob/0e3769f87179ebcffa32860c62e0fc277a8c0c7a/src/tutorial.gif);
   <br />
   :octocat: Find me on GitHub: [Cluce059](https://github.com/Cluce059)<br />
   <br />
