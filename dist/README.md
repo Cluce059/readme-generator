@@ -1,9 +1,9 @@
 
-  ## Readme-Generator
+  ## readme-generator
   ![badge](https://img.shields.io/badge/license-MIT-blueviolet)
   <br />
   ## Description
-  🔍 generates a professional readme based on user input
+  🔍 an app that generates a profesional readme based on user input
   ## Table of Contents
   - [Description](#description)
   - [Installation](#installation)
@@ -13,9 +13,9 @@
   - [Tests](#tests)
   - [Questions](#questions)
   ## Installation
-  💾 clone this repo and install node npm
+  💾 clone this repo and download node.js and npm
   ## Usage
-  💻 for generating readmes
+  💻 use to generate a professional readme for any project!
   ## License
   
   ![badge](https://img.shields.io/badge/license-MIT-blueviolet)
@@ -24,7 +24,7 @@
   ## Contributing
   😇 PR's welcome!
   ## Tests
-  ❗  user the test data index.js
+  ❗  open the console and type 'node index.js' and answer the prompts
   ## Questions
   👽 email me!<br />
   <br />
